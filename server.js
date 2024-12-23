@@ -8,7 +8,7 @@ const PORT = 3000;
 
 // Middleware
 app.use(bodyParser.json({ limit: '10mb' })); // To handle base64 image data
-app.use(express.static('public')); // Serve static files from the 'public' folder
+app.use(express.static(path.join(__dirname, 'public'))); // Serve static files from the 'public' folder
 
 // Endpoint to save image
 app.post('/save-image', (req, res) => {
@@ -26,6 +26,11 @@ app.post('/save-image', (req, res) => {
     fs.writeFileSync(filePath, base64Data, 'base64');
 
     res.json({ success: true });
+});
+
+// Default route to serve the index.html file
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // Start the server
