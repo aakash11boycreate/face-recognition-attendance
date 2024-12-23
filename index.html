@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Recognition Attendance System</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/face-api.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Face Recognition Attendance System</h1>
+    </header>
+    <div class="container">
+        <video id="video" autoplay muted></video>
+        <button id="capture">Mark Attendance</button>
+        <div class="attendance-log">
+            <h2>Attendance Log</h2>
+            <ul id="log"></ul>
+        </div>
+        <button id="export">Export Attendance</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
