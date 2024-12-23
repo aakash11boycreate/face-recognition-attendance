@@ -1,5 +1,6 @@
 const video = document.getElementById('video');
 const captureButton = document.getElementById('capture');
+const saveImageButton = document.getElementById('saveImage');
 const exportButton = document.getElementById('export');
 const log = document.getElementById('log');
 
@@ -37,6 +38,27 @@ captureButton.addEventListener('click', async () => {
         li.textContent = `${match.toString()} - ${timestamp}`;
         log.appendChild(li);
     });
+});
+
+// Save captured image
+saveImageButton.addEventListener('click', () => {
+    // Create a canvas element to capture the video frame
+    const canvas = document.createElement('canvas');
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+    // Convert the canvas to a data URL (base64 image format)
+    const imageData = canvas.toDataURL('image/jpeg');
+
+    // Create a download link
+    const link = document.createElement('a');
+    link.href = imageData;
+    link.download = `captured_image_${Date.now()}.jpg`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
 });
 
 // Export attendance as CSV
