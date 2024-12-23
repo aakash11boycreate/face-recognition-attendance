@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #3a7bd5, #3a6073);
+    color: #fff;
+    text-align: center;
+}
+
+header {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #ffd700;
+}
+
+.container {
+    padding: 20px;
+}
+
+video {
+    border: 5px solid #ffd700;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background: #ffd700;
+    color: #3a6073;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background: #fff;
+    color: #3a7bd5;
+}
+
+.attendance-log {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.attendance-log h2 {
+    color: #ffd700;
+}
+
+.attendance-log ul {
+    list-style: none;
+    padding: 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.attendance-log ul li {
+    padding: 10px;
+    margin-bottom: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    text-align: left;
+}
